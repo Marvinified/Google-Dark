@@ -45,61 +45,61 @@ class Nav extends Component {
           {IsAppsDropDowmOpen && (
             <AppsDropDown>
               <AppsDropDownList>
-                <AppsDropDownListItem href="">
+                <AppsDropDownListItem href="https://myaccount.google.com">
                   <Image src={require("../asset/account.png")} />
                   Account
                 </AppsDropDownListItem>
-                <AppsDropDownListItem href="">
+                <AppsDropDownListItem href="https://www.google.com">
                   <Image src={require("../asset/G.png")} />
                   Search
                 </AppsDropDownListItem>
-                <AppsDropDownListItem href="">
+                <AppsDropDownListItem href="https://maps.google.com">
                   <Image src={require("../asset/GMap.png")} />
                   Maps
                 </AppsDropDownListItem>
-                <AppsDropDownListItem href="">
+                <AppsDropDownListItem href="https://www.youtube.com">
                   <Image src={require("../asset/youtube.png")} />
                   YouTube
                 </AppsDropDownListItem>
-                <AppsDropDownListItem href="">
+                <AppsDropDownListItem href="https://play.google.com">
                   <Image src={require("../asset/GPlay.png")} />
                   Play
                 </AppsDropDownListItem>
-                <AppsDropDownListItem href="">
+                <AppsDropDownListItem href="https://news.google.com">
                   <Image src={require("../asset/GNews.png")} />
                   News
                 </AppsDropDownListItem>
-                <AppsDropDownListItem href="">
+                <AppsDropDownListItem href="https://mail.google.com">
                   <Image src={require("../asset/GMail.png")} />
                   Gmail
                 </AppsDropDownListItem>
-                <AppsDropDownListItem href="">
+                <AppsDropDownListItem href="https://contacts.google.com">
                   <Image src={require("../asset/GContacts.png")} />
                   Contacts
                 </AppsDropDownListItem>
-                <AppsDropDownListItem href="">
+                <AppsDropDownListItem href="https://drive.google.com">
                   <Image src={require("../asset/GDrive.png")} />
                   Drive
                 </AppsDropDownListItem>
-                <AppsDropDownListItem href="">
+                <AppsDropDownListItem href="https://www.google.com/calendar">
                   <Image src={require("../asset/GCalendar.png")} />
                   Calendar
                 </AppsDropDownListItem>
-                <AppsDropDownListItem href="">
+                <AppsDropDownListItem href="https://plus.google.com">
                   <Image src={require("../asset/G+.png")} />
                   Google+
                 </AppsDropDownListItem>
-                <AppsDropDownListItem href="">
+                <AppsDropDownListItem href="https://translate.google.com">
                   <Image src={require("../asset/GTranslate.png")} />
                   Translate
                 </AppsDropDownListItem>
-                <AppsDropDownListItem href="">
+                <AppsDropDownListItem href="https://photos.google.com">
                   <Image src={require("../asset/GPhotos.png")} />
-                  Translate
+                  Photos
                 </AppsDropDownListItem>
               </AppsDropDownList>
 
-              <Link href="">
+              <Link href="https://www.google.com.ng/intl/en/options/">
                 <LearnMoreButton>Learn More</LearnMoreButton>
               </Link>
             </AppsDropDown>
