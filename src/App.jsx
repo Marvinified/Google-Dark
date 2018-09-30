@@ -1,29 +1,46 @@
-import React from "react";
+import React, { Component } from "react";
 import Nav from "./nav";
 import Footer from "./footer";
 import styled from "styled-components";
 import { IconButton } from "@material-ui/core";
 
-function App() {
-  return (
-    <Container>
-      <Nav />
-      <Main>
-        <div>
-          <Image alt="Google" src={require("./asset/google.png")} />
-        </div>
-        <SearchBox>
-          <SearchInput />
-          <MicButton />
-        </SearchBox>
-        <div>
-          <Button>Google Search</Button>
-          <Button>I'm Feeling Lucky</Button>
-        </div>
-      </Main>
-      <Footer />
-    </Container>
-  );
+class App extends Component {
+  state = {
+    searchText: ""
+  };
+  handleUserInput = e => {
+    const searchText = e.target.value;
+    this.setState({
+      searchText
+    });
+  };
+  sendSearchQuery = e => {
+    let text = this.state.searchText;
+    text = text.replace(/\s/g, "+");
+    const query = `https://www.google.com.ng/search?q=${text}`;
+    window.location.href = query;
+  };
+  render() {
+    return (
+      <Container>
+        <Nav />
+        <Main>
+          <div>
+            <Image alt="Google" src={require("./asset/google.png")} />
+          </div>
+          <SearchBox>
+            <SearchInput onChange={this.handleUserInput} />
+            <MicButton />
+          </SearchBox>
+          <div>
+            <Button onClick={this.sendSearchQuery}>Google Search</Button>
+            <Button>I'm Feeling Lucky</Button>
+          </div>
+        </Main>
+        <Footer />
+      </Container>
+    );
+  }
 }
 
 const Container = styled.div`
