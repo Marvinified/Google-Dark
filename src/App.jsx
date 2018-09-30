@@ -2,11 +2,18 @@ import React, { Component } from "react";
 import Nav from "./nav";
 import Footer from "./footer";
 import styled from "styled-components";
-import { IconButton } from "@material-ui/core";
+import {
+  IconButton,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions
+} from "@material-ui/core";
 
 class App extends Component {
   state = {
-    searchText: ""
+    searchText: "",
+    isMicDialogOpen: false
   };
   handleUserInput = e => {
     const searchText = e.target.value;
@@ -24,9 +31,44 @@ class App extends Component {
     const goToDoodles = "https://www.google.com/doodles/";
     window.location.href = goToDoodles;
   };
+  openMicDialog = () => {
+    this.setState(
+      {
+        isMicDialogOpen: true
+      },
+      () => {
+        document.addEventListener("click", this.closeMicDialog);
+      }
+    );
+  };
+  closeMicDialog = () => {
+    this.setState(
+      {
+        isMicDialogOpen: false
+      },
+      () => {
+        document.removeEventListener("click", this.closeMicDialog);
+      }
+    );
+  };
+
   render() {
     return (
       <Container>
+        <Dialog
+          open={this.state.isMicDialogOpen}
+          onClose={this.closeMicDialog}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">Google Dark</DialogTitle>
+          <DialogContent>This Feature is Currently Unavailable</DialogContent>
+          <DialogActions>
+            <Button onClick={this.closeMicDialog} color="primary" autoFocus>
+              Close
+            </Button>
+          </DialogActions>
+        </Dialog>
         <Nav />
         <Main>
           <div>
@@ -34,7 +76,7 @@ class App extends Component {
           </div>
           <SearchBox>
             <SearchInput onChange={this.handleUserInput} />
-            <MicButton />
+            <MicButton onClick={this.openMicDialog} />
           </SearchBox>
           <div>
             <Button onClick={this.sendSearchQuery}>Google Search</Button>
