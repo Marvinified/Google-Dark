@@ -28,8 +28,10 @@ class App extends Component {
     window.location.href = query;
   };
   feelLucky = e => {
-    const goToDoodles = "https://www.google.com/doodles/";
-    window.location.href = goToDoodles;
+    let text = this.state.searchText;
+    text = text.replace(/\s/g, "+");
+    const query = `https://www.google.com.ng/search?q=${text}&btnI`;
+    window.location.href = query;
   };
   openMicDialog = () => {
     this.setState(
