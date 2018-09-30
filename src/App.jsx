@@ -20,6 +20,10 @@ class App extends Component {
     const query = `https://www.google.com.ng/search?q=${text}`;
     window.location.href = query;
   };
+  feelLucky = e => {
+    const goToDoodles = "https://www.google.com/doodles/";
+    window.location.href = goToDoodles;
+  };
   render() {
     return (
       <Container>
@@ -34,7 +38,7 @@ class App extends Component {
           </SearchBox>
           <div>
             <Button onClick={this.sendSearchQuery}>Google Search</Button>
-            <Button>I'm Feeling Lucky</Button>
+            <Button onClick={this.feelLucky}>I'm Feeling Lucky</Button>
           </div>
         </Main>
         <Footer />
@@ -52,8 +56,8 @@ const Container = styled.div`
   flex-direction column;
   justify-content space-between;
   align-items center;
-
 `;
+
 const Main = styled.div`
   display flex;
   flex-direction column;
@@ -61,9 +65,11 @@ const Main = styled.div`
   align-items center;
   width : stretch;
 `;
+
 const Image = styled.img`
   padding 1em;
 `;
+
 const SearchBox = styled.div`
   width: 600px;
   display flex;
@@ -73,8 +79,7 @@ const SearchBox = styled.div`
   padding : .5em;
   box-shadow 0em .1em .5em 0em rgba(100, 100, 100, .2);
   &:hover, &:focus-within{
-  box-shadow 0em .1em .5em 0em rgba(100, 100, 100, .3);
-    
+    box-shadow 0em .1em .5em 0em rgba(100, 100, 100, .3);
   }
 `;
 
